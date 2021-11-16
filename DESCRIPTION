@@ -1,0 +1,12 @@
+Package: jackknifeplus
+Type: Package
+Title: What the package does (short line)
+Version: 1.0.0
+Date: 2021-11-17
+Author: person("Weiwei", "Wang", email = "weiweiwang@tamu.edu",role = "aut")
+Maintainer: Weiwei Wang <weiweiwang@tamu.edu>
+Description: More about what it does (maybe more than one line)
+License: GPL (>= 3)
+Imports: Rcpp (>= 1.0.7)
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.1.2

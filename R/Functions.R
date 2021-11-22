@@ -1,13 +1,13 @@
 #'jackknifeplus
 #'
-#' @param Xtrain #' n x p training data, 1st column should be 1s to account for intercept
-#' @param Ytrain #' a vector of size n of class labels, from 0 to K-1
-#' @param Xtest #' number of FIXED iterations of the algorithm, default value is 50
-#' @param Ytest #' learning rate, default value is 0.1 
-#' @param a #' ridge parameter, default value is 0.1
-#' @param predfunction #' (optional) initial starting values of beta for the algorithm, should be p x K matrix
+#' @param Xtrain #' n training samples
+#' @param Ytrain #' a response vector of size n
+#' @param Xtest #' a test sample
+#' @param Ytest #' test sample's response value  
+#' @param a #' probability coverage 
+#' @param predfunction #' a function that containing desired algorithm which input are Xtrain, Ytrain, Xtest, and output is predicted value of Xtest. 
 #'
-#' @return #'beta - p x K matrix of estimated beta values after numIter iterations; objective - (numIter + 1) length vector of objective values of the function that we are minimizing at each iteration (+ starting value)
+#' @return #' conformal confidence interval of jackknife+
 #' @export
 #'
 #' @examples

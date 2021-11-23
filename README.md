@@ -9,7 +9,7 @@ In this package, several conformal prediction algorithms, including Jackknife+, 
 
 ## Installation instructions
 
-Use git clone : to download this package from github to local.
+Use git clone : download this package from github to local.
 
 ## Future work
 Create C++ code using R Armadillo to make the algorithm faster.

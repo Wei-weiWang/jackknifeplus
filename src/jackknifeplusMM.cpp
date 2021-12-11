@@ -1,5 +1,4 @@
 #include "RcppArmadillo.h"
-#include <functional>
 using namespace Rcpp;
 
 

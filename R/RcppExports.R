@@ -5,31 +5,19 @@ predY_LR_c <- function(Xtrain, Ytrain, Xtest) {
     .Call('_jackknifeplus_predY_LR_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
 }
 
-jackknife_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_jackknife_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
-}
-
-predY_LR_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_predY_LR_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
-}
-
 jackknifeplus_c <- function(Xtrain, Ytrain, Xtest) {
     .Call('_jackknifeplus_jackknifeplus_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
 }
 
-predY_LR_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_predY_LR_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
-}
-
-jackknifeplusCV_c <- function(Xtrain, Ytrain, Xtest, K) {
-    .Call('_jackknifeplus_jackknifeplusCV_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest, K)
-}
-
-predY_LR_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_predY_LR_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+jackknife_c <- function(Xtrain, Ytrain, Xtest) {
+    .Call('_jackknifeplus_jackknife_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
 }
 
 jackknifeplusMM_c <- function(Xtrain, Ytrain, Xtest) {
     .Call('_jackknifeplus_jackknifeplusMM_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+}
+
+jackknifeplusCV_c <- function(Xtrain, Ytrain, Xtest, K) {
+    .Call('_jackknifeplus_jackknifeplusCV_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest, K)
 }
 

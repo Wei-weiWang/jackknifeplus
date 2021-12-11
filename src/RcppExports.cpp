@@ -24,32 +24,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// jackknife_c
-Rcpp::List jackknife_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
-RcppExport SEXP _jackknifeplus_jackknife_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
-    rcpp_result_gen = Rcpp::wrap(jackknife_c(Xtrain, Ytrain, Xtest));
-    return rcpp_result_gen;
-END_RCPP
-}
-// predY_LR_c
-double predY_LR_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
-RcppExport SEXP _jackknifeplus_predY_LR_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
-    rcpp_result_gen = Rcpp::wrap(predY_LR_c(Xtrain, Ytrain, Xtest));
-    return rcpp_result_gen;
-END_RCPP
-}
 // jackknifeplus_c
 Rcpp::List jackknifeplus_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
 RcppExport SEXP _jackknifeplus_jackknifeplus_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
@@ -63,16 +37,29 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// predY_LR_c
-double predY_LR_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
-RcppExport SEXP _jackknifeplus_predY_LR_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
+// jackknife_c
+Rcpp::List jackknife_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
+RcppExport SEXP _jackknifeplus_jackknife_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
-    rcpp_result_gen = Rcpp::wrap(predY_LR_c(Xtrain, Ytrain, Xtest));
+    rcpp_result_gen = Rcpp::wrap(jackknife_c(Xtrain, Ytrain, Xtest));
+    return rcpp_result_gen;
+END_RCPP
+}
+// jackknifeplusMM_c
+Rcpp::List jackknifeplusMM_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
+RcppExport SEXP _jackknifeplus_jackknifeplusMM_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
+    Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
+    rcpp_result_gen = Rcpp::wrap(jackknifeplusMM_c(Xtrain, Ytrain, Xtest));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -90,42 +77,13 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// predY_LR_c
-double predY_LR_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
-RcppExport SEXP _jackknifeplus_predY_LR_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
-    rcpp_result_gen = Rcpp::wrap(predY_LR_c(Xtrain, Ytrain, Xtest));
-    return rcpp_result_gen;
-END_RCPP
-}
-// jackknifeplusMM_c
-Rcpp::List jackknifeplusMM_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const arma::mat& Xtest);
-RcppExport SEXP _jackknifeplus_jackknifeplusMM_c(SEXP XtrainSEXP, SEXP YtrainSEXP, SEXP XtestSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtrain(XtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Ytrain(YtrainSEXP);
-    Rcpp::traits::input_parameter< const arma::mat& >::type Xtest(XtestSEXP);
-    rcpp_result_gen = Rcpp::wrap(jackknifeplusMM_c(Xtrain, Ytrain, Xtest));
-    return rcpp_result_gen;
-END_RCPP
-}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_jackknifeplus_predY_LR_c", (DL_FUNC) &_jackknifeplus_predY_LR_c, 3},
-    {"_jackknifeplus_jackknife_c", (DL_FUNC) &_jackknifeplus_jackknife_c, 3},
-    {"_jackknifeplus_predY_LR_c", (DL_FUNC) &_jackknifeplus_predY_LR_c, 3},
     {"_jackknifeplus_jackknifeplus_c", (DL_FUNC) &_jackknifeplus_jackknifeplus_c, 3},
-    {"_jackknifeplus_predY_LR_c", (DL_FUNC) &_jackknifeplus_predY_LR_c, 3},
-    {"_jackknifeplus_jackknifeplusCV_c", (DL_FUNC) &_jackknifeplus_jackknifeplusCV_c, 4},
-    {"_jackknifeplus_predY_LR_c", (DL_FUNC) &_jackknifeplus_predY_LR_c, 3},
+    {"_jackknifeplus_jackknife_c", (DL_FUNC) &_jackknifeplus_jackknife_c, 3},
     {"_jackknifeplus_jackknifeplusMM_c", (DL_FUNC) &_jackknifeplus_jackknifeplusMM_c, 3},
+    {"_jackknifeplus_jackknifeplusCV_c", (DL_FUNC) &_jackknifeplus_jackknifeplusCV_c, 4},
     {NULL, NULL, 0}
 };
 

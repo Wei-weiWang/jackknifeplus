@@ -1,12 +1,10 @@
-#'jackknifeplus
+#'jackknifeplusCV_c_wrapper
 #'
 #' @param Xtrain #' n training samples, whose format must be consistent with input of predfunction user provides 
 #' @param Ytrain #' a response vector of size n
 #' @param Xtest #' a test sample, whose format must be consistent with input of predfunction user provides
-#' @param Ytest #' a scalar, test sample's response value  
 #' @param a #' probability coverage is 1-2a 
-#' @param predfunction #' a function that containing desired algorithm which input are Xtrain, Ytrain, Xtest, and output is predicted value, a scalar, of Xtest. 
-#'
+#' @param K #' divide data into K folders to do cross validation
 #' @return #' conformal confidence interval of jackknife+
 #' @export
 #'

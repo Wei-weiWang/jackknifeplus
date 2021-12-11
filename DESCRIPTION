@@ -1,13 +1,19 @@
 Package: jackknifeplus
-Type: Package
-Title:  Construct predictive inference using the jackknifeplus
+Title: Construct predictive inference using the jackknifeplus
 Version: 1.0.0
-Date: 2021-11-17
-Author: person("Weiwei", "Wang", email = "weiweiwang@tamu.edu",role = "aut")
-Maintainer: Weiwei Wang <weiweiwang@tamu.edu>
+Authors@R: 
+    person(given = "Weiwei",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "weiweiwang@tamu.edu")
 Description: Jackknifeplus is a conformal prediction method to construct prediction intervals without distributional or algorithmic assumptions. It constructs the prediction interval based on the sample quantile of leave oneo out (LOO) residuals. This package will create Jackknifeplus prediction intervals.
 License: GPL (>= 3)
-Imports: Rcpp (>= 1.0.7)
-LinkingTo: Rcpp, RcppArmadillo
-RoxygenNote: 7.1.2
 Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
+Imports: 
+    Rcpp

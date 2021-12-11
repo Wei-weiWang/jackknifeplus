@@ -2,22 +2,22 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 predY_LR_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_predY_LR_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+    .Call(`_jackknifeplus_predY_LR_c`, Xtrain, Ytrain, Xtest)
 }
 
 jackknifeplus_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_jackknifeplus_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+    .Call(`_jackknifeplus_jackknifeplus_c`, Xtrain, Ytrain, Xtest)
 }
 
 jackknife_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_jackknife_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+    .Call(`_jackknifeplus_jackknife_c`, Xtrain, Ytrain, Xtest)
 }
 
 jackknifeplusMM_c <- function(Xtrain, Ytrain, Xtest) {
-    .Call('_jackknifeplus_jackknifeplusMM_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest)
+    .Call(`_jackknifeplus_jackknifeplusMM_c`, Xtrain, Ytrain, Xtest)
 }
 
 jackknifeplusCV_c <- function(Xtrain, Ytrain, Xtest, K) {
-    .Call('_jackknifeplus_jackknifeplusCV_c', PACKAGE = 'jackknifeplus', Xtrain, Ytrain, Xtest, K)
+    .Call(`_jackknifeplus_jackknifeplusCV_c`, Xtrain, Ytrain, Xtest, K)
 }
 

@@ -64,6 +64,7 @@ library(jackknifeplus)
 Xtrain=matrix(rnorm(200),40,5)
 Ytrain=matrix(rnorm(40),40,1)
 Xtest=matrix(rnorm(5),1,5)
+# Generate four types of prediction intervals
 result_1 = jackknifeplus_c_wrapper(Xtrain, Ytrain, Xtest, 0.05)
 result_2 = jackknife_c_wrapper(Xtrain, Ytrain, Xtest, 0.05)
 result_3 = jackknifeplusCV_c_wrapper(Xtrain, Ytrain, Xtest, 0.05, 4)

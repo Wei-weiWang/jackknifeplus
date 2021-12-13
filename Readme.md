@@ -8,10 +8,18 @@ In this package, several conformal prediction algorithms, including Jackknife+, 
 
 ## Installation
 
+
 ```
 git clone:https://github.com/Wei-weiWang/jackknifeplus.git
 
 ```
+Or
+
+```{r}
+#install.packages("devtools") if don't install, please install
+devtools::install_github("Wei-weiWang/jackknifeplus", dependencies = TRUE)
+```
+
 
 ## Functions
 
@@ -46,5 +54,21 @@ $$\hat{C}_{n,K,a}^{jackknife+CV} = [\hat{q}^{-}_{n,a}\{\hat{\mu}_{-S_{k(i)}}(X_{
 We split training dataset into $K$ subsets equally. $\hat{\mu}_{-S_{k(i)}}$ means the model is trained without the subset that contains the $i$th training sample. $R_{i}^{CV}=|Y_i - \hat{\mu}_{-S_{k(i)}}(X_{i}) |$. 
 
 By Jackknife+CV, we can possibly train less models. But the interval may be bigger because we use less samples. The theoretical coverage of Jackknife+CV interval is $1-2a-\sqrt{2/n}$.
+
+
+## Examples
+
+```{r}
+# Example
+library(jackknifeplus)
+Xtrain=matrix(rnorm(200),40,5)
+Ytrain=matrix(rnorm(40),40,1)
+Xtest=matrix(rnorm(5),1,5)
+result_1 = jackknifeplus_c_wrapper(Xtrain, Ytrain, Xtest, 0.05)
+result_2 = jackknife_c_wrapper(Xtrain, Ytrain, Xtest, 0.05)
+result_3 = jackknifeplusCV_c_wrapper(Xtrain, Ytrain, Xtest, 0.05, 4)
+result_4 = jackknifeplusMM_c_wrapper(Xtrain, Ytrain, Xtest, 0.05)
+```
+
 
 [1]Barber R F, Candes E J, Ramdas A, et al. Predictive inference with the jackknife+[J]. The Annals of Statistics, 2021, 49(1): 486-507.

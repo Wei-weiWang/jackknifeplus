@@ -26,12 +26,14 @@ Jackknife+ ensure probability coverage of $1-2a$.
 
 ### Jackknife interval
 $$\hat{C}_{n,a}^{jackknife} = [\hat{q}^{-}_{n,a}\{\hat{\mu}(X_{n+1})-R_i^{LOO}\},\ \  \hat{q}^{+}_{n,a}\{\hat{\mu}(X_{n+1})+R_i^{LOO}\}]$$
+
 This is original Jackknife method, which cannot guarantee any probability w.r.t $a$.
 
 
 ### Jackknife+MM interval
 
 $$\hat{C}_{n,a}^{jackknife+MM} = [min_i\ \hat{\mu}_{-i}(X_{n+1})-\hat{q}^{+}_{n,a}\{R_i^{LOO}\}, \ \ max_i\ \hat{\mu}_{-i}(X_{n+1})+\hat{q}^{+}_{n,a}\{R_i^{LOO}\}]$$
+
 This is Jackknife+MM interval. Apparently, it is bigger than Jackknife+ interval. Jackknife+MM interval guarantee any probability coverage as $1-a$, which is also bigger than Jackknife+ interval.
 
 
@@ -39,6 +41,7 @@ This is Jackknife+MM interval. Apparently, it is bigger than Jackknife+ interval
 
 
 $$\hat{C}_{n,K,a}^{jackknife+CV} = [\hat{q}^{-}_{n,a}\{\hat{\mu}_{-S_{k(i)}}(X_{n+1})-R_i^{CV}\},\ \  \hat{q}^{+}_{n,a}\{\hat{\mu}_{-S_{k(i)}}(X_{n+1})+R_i^{CV}\}]$$
+
 We split training dataset into $K$ subsets equally. $\hat{\mu}_{-S_{k(i)}}$ means the model is trained without the subset that contains the $i$th training sample. $R_{i}^{CV}=|Y_i - \hat{\mu}_{-S_{k(i)}}(X_{i}) |$. 
 
 By Jackknife+CV, we can possibly train less models. But the interval may be bigger because we use less samples. The theoretical coverage of Jackknife+CV interval is $1-2a-\sqrt{2/n}$.

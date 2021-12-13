@@ -1,11 +1,11 @@
 #'jackknife_c_wrapper
 #'
-#' @param Xtrain #' n training samples, whose format must be consistent with input of predfunction user provides 
-#' @param Ytrain #' a response vector of size n
-#' @param Xtest #' a test sample, whose format must be consistent with input of predfunction user provides
-#' @param a #' probability coverage is 1-2a 
+#' @param Xtrain #' n training samples, whose format must be matrix n*p 
+#' @param Ytrain #' a response matrix of dimension n * 1
+#' @param Xtest #' a test sample as matrix, whose format must be consistent with Xtrain 1*p
+#' @param a #' probability coverage is 1-2a 0<a<1 
 #'
-#' @return #' conformal confidence interval of jackknife+
+#' @return #' conformal confidence interval of jackknife
 #' @export
 #'
 #' @examples 

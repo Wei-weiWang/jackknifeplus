@@ -7,16 +7,16 @@
 jackknife_c_wrapper(Xtrain, Ytrain, Xtest, a)
 }
 \arguments{
-\item{Xtrain}{#' n training samples, whose format must be consistent with input of predfunction user provides}
+\item{Xtrain}{#' n training samples, whose format must be matrix n*p}
 
-\item{Ytrain}{#' a response vector of size n}
+\item{Ytrain}{#' a response matrix of dimension n * 1}
 
-\item{Xtest}{#' a test sample, whose format must be consistent with input of predfunction user provides}
+\item{Xtest}{#' a test sample as matrix, whose format must be consistent with Xtrain 1*p}
 
-\item{a}{#' probability coverage is 1-2a}
+\item{a}{#' probability coverage is 1-2a 0<a<1}
 }
 \value{
-#' conformal confidence interval of jackknife+
+#' conformal confidence interval of jackknife
 }
 \description{
 jackknife_c_wrapper

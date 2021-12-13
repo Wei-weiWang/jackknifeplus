@@ -1,4 +1,4 @@
-(Please refer to Readme.pdf if you want math equations in good format :)
+(Please refer to Readme.html if you want math equations in good format :)
 # Introduction
 
 Jackknife+[1] is a conformal prediction method to construct prediction intervals without distributional or algorithmic assumptions. Here, we only assume the training/testing data to be i.i.d. and the algorithm to be invariant to permutation of the training set. In this package, we assume the algorithm to be linear regression. Jackknife+ constructs the prediction interval based on the sample quantile of leave-one-out (LOO) residuals. It enjoys a theoretical coverage of 1-2α.

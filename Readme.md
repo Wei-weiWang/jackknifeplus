@@ -11,7 +11,10 @@ In this package, several conformal prediction algorithms, including Jackknife+, 
 
 Use git clone : download this package from github to local.
 
-## Future work
-Create C++ code using R Armadillo to make the algorithm faster.
-Add Jackknife-mm and K-fold cross-validation algorithms. 
-Create more examples to implement these algorithms.
+## Functions
+
+We have four main R functions: jackknifeplus_c_wrapper, jackknife_c_wrapper, jackknifeplusMM_c_wrapper and jackknifeplusCV_c_wrapper which are to calculate prediction intervals by four different methods respectively: Jackknife+, Jackknife, Jackknife-mm, and K-fold cross-validation . Actually, we use C code inside to make them faster because these algorithms need to calculate loops. 
+
+### Jackknife+ interval
+
+\widehat{C}_{n, \alpha}^{\text {jackknife+ }}\left(X_{n+1}\right)=\left[\widehat{q}_{n, \alpha}^{-}\left\{\widehat{\mu}_{-i}\left(X_{n+1}\right)-R_{i}^{\mathrm{LOO}}\right\}, \widehat{q}_{n, \alpha}^{+}\left\{\widehat{\mu}_{-i}\left(X_{n+1}\right)+R_{i}^{\mathrm{LOO}}\right\}\right]

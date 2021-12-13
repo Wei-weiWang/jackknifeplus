@@ -17,4 +17,4 @@ We have four main R functions: jackknifeplus_c_wrapper, jackknife_c_wrapper, jac
 
 ### Jackknife+ interval
 
-$$\widehat{C}_{n, \alpha}^{\text {jackknife+ }}\left(X_{n+1}\right)=\left[\widehat{q}_{n, \alpha}^{-}\left\{\widehat{\mu}_{-i}\left(X_{n+1}\right)-R_{i}^{\mathrm{LOO}}\right\}, \widehat{q}_{n, \alpha}^{+}\left\{\widehat{\mu}_{-i}\left(X_{n+1}\right)+R_{i}^{\mathrm{LOO}}\right\}\right]$$
+$$\hat{C}_{n,a}^{jackknife+} = [\hat{q}^{-}_{n,a}\{\hat{\mu}_{-i}(X_{n+1})-R_i^{LOO}\}, \hat{q}^{+}_{n,a}\{\hat{\mu}_{-i}(X_{n+1})+R_i^{LOO}\}]$$

@@ -22,6 +22,7 @@ We have four main R functions: jackknifeplus_c_wrapper, jackknife_c_wrapper, jac
 $$\hat{C}_{n,a}^{jackknife+} = [\hat{q}^{-}_{n,a}\{\hat{\mu}_{-i}(X_{n+1})-R_i^{LOO}\},\ \  \hat{q}^{+}_{n,a}\{\hat{\mu}_{-i}(X_{n+1})+R_i^{LOO}\}]$$
 
 where $\hat{\mu}_{-i}$ is the trained algorithm without using the $i$th training data. $X_{n+1}$ is testing data. $R_{i}^{LOO}=|Y_i - \hat{\mu}_{-i}(X_{i})\ \  i=1,2...n |$, $\hat{q}^{-}_{n,a}$ is the $Flooring(a(n+1))$-th smallest value of a vector and $\hat{q}^{+}_{n,a}$ is the $Ceiling((1-a)(n-1))$-th smallest value of a vector. So we need to set size of training data, $n$, large enough to make sure  $\hat{q}^{-}_{n,a}$ and $\hat{q}^{+}_{n,a}$ are bigger than $0$ and less than $n+1$. 
+
 Jackknife+ ensure probability coverage of $1-2a$.
 
 ### Jackknife interval

@@ -19,14 +19,13 @@
 # jackknife CV+
 
 jackknifeplusCV_c_wrapper <- function(Xtrain, Ytrain, Xtest, a, K) {
-  
   n <- nrow(Xtrain) # number of total data
-  
-  m = n%/%K # number of data in every folder
-  
-  result = jackknifeplusCV_c(Xtrain,Ytrain ,Xtest , K)
-  q1 = result$q1
-  q2 = result$q2
-  interval <- c(sort(q1)[floor(a*(K*m+1))], sort(q2)[ceiling((1-a)*(K*m+1))])
+
+  m <- n %/% K # number of data in every folder
+
+  result <- jackknifeplusCV_c(Xtrain, Ytrain, Xtest, K) # Use C code
+  q1 <- result$q1
+  q2 <- result$q2
+  interval <- c(sort(q1)[floor(a * (K * m + 1))], sort(q2)[ceiling((1 - a) * (K * m + 1))]) # Calculate interval
   return(interval)
 }

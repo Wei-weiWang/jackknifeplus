@@ -17,10 +17,10 @@
 
 jackknife_c_wrapper <- function(Xtrain, Ytrain, Xtest, a) {
   n <- nrow(Xtrain)
-  result = jackknife_c(Xtrain,Ytrain ,Xtest)
-  q1 = result$q1
-  q2 = result$q2
-  interval <- c(sort(q1)[floor(a*(n+1))], sort(q2)[ceiling((1-a)*(n+1))])
+  result <- jackknife_c(Xtrain, Ytrain, Xtest) # Use c code
+  q1 <- result$q1
+  q2 <- result$q2
+  interval <- c(sort(q1)[floor(a * (n + 1))], sort(q2)[ceiling((1 - a) * (n + 1))]) # Calculte interval
   return(interval)
 }
 

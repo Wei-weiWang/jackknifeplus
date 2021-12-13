@@ -42,11 +42,14 @@ Rcpp::List jackknifeplus_c(const arma::mat& Xtrain, const arma::mat& Ytrain, con
     Y.shed_row(i);
     
     arma::mat Xtrain_row = Xtrain.row(i);
+    
+    //Calculate predictive value
     double predY = predY_LR_c(X,Y, Xtrain_row);
     
-    
+    //Calculate RLOO
     Results_RLOO[i] = std::fabs(Ytrain[i] - predY);
     
+    //Calculate LOOtest
     Results_LOOtest[i] = predY_LR_c(X, Y, Xtest.row(0));
 
     
@@ -83,6 +86,7 @@ Rcpp::List jackknife_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const a
   //  q2 = 1:n
   arma::vec q2(n);
   
+  //Calculate test predictive value
   double Results_test = predY_LR_c(Xtrain, Ytrain, Xtest);
   
   int i;
@@ -97,9 +101,11 @@ Rcpp::List jackknife_c(const arma::mat& Xtrain, const arma::mat& Ytrain, const a
     Y.shed_row(i);
     
     arma::mat Xtrain_row = Xtrain.row(i);
+    
+    //Calculate predictive value
     double predY = predY_LR_c(X,Y, Xtrain_row);
     
-    
+    //Calculate RLOO
     Results_RLOO[i] = std::fabs(Ytrain[i] - predY);
     
     
@@ -153,11 +159,14 @@ Rcpp::List jackknifeplusMM_c(const arma::mat& Xtrain, const arma::mat& Ytrain, c
     Y.shed_row(i);
     
     arma::mat Xtrain_row = Xtrain.row(i);
+    
+    //Calculate predictive value
     double predY = predY_LR_c(X,Y, Xtrain_row);
     
-    
+    //Calculate RLOO
     Results_RLOO[i] = std::fabs(Ytrain[i] - predY);
     
+    //Calculate LOOtest
     Results_LOOtest[i] = predY_LR_c(X, Y, Xtest.row(0));
     
     
@@ -205,10 +214,12 @@ Rcpp::List jackknifeplusCV_c(const arma::mat& Xtrain, const arma::mat& Ytrain, c
     
     Y.shed_rows(i*m, (i+1)*m-1 );
     
+    //Calculate test predictive value
     double testCV = predY_LR_c(X, Y, Xtest);
     
     for(j=0; j<m; j++){
       
+      //Calculate RCV
       Rcv[i*m+j] = std::fabs( Ytrain[i*m+j] - predY_LR_c(X, Y, Xtrain.row(i*m+j) )    );
       
       q1[i*m+j] = testCV - Rcv[i*m+j];

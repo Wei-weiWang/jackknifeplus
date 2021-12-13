@@ -19,9 +19,10 @@
 
 jackknifeplusMM_c_wrapper <- function(Xtrain, Ytrain, Xtest, a) {
   n <- nrow(Xtrain)
-  result = jackknifeplusMM_c(Xtrain,Ytrain ,Xtest)
-  left = min(result$Results_LOOtest -  sort(result$Results_RLOO)[ceiling((1-a)*(n+1))] )
-  right = max(result$Results_LOOtest +  sort(result$Results_RLOO)[ceiling((1-a)*(n+1))] )
+  result <- jackknifeplusMM_c(Xtrain, Ytrain, Xtest) # Use C code
+  # Calculate interval
+  left <- min(result$Results_LOOtest - sort(result$Results_RLOO)[ceiling((1 - a) * (n + 1))])
+  right <- max(result$Results_LOOtest + sort(result$Results_RLOO)[ceiling((1 - a) * (n + 1))])
   interval <- c(left, right)
   return(interval)
 }
